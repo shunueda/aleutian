@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "es2017",
+    "module": "ESNext",
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "lib": ["es2021"],
+  },
+  "ts-node": {
+    "swc": true
+  }
+}
