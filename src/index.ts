@@ -1,1 +1,1 @@
-export { Seq } from './collection/Seq'
+export * from './collection/immutable/Seq'
