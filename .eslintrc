@@ -1,0 +1,60 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "sort-class-members"
+  ],
+  "extends": [
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "rules": {
+    "curly": "error",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "sort-class-members/sort-class-members": [
+      2,
+      {
+        "order": [
+          "[static-prop]",
+          "[static-method]",
+          "[prop]",
+          "constructor",
+          "[method]"
+        ],
+        "groups": {
+          "static-prop": [
+            {
+              "static": true,
+              "type": "property",
+              "sort": "alphabetical"
+            }
+          ],
+          "static-method": [
+            {
+              "static": true,
+              "type": "method",
+              "sort": "alphabetical"
+            }
+          ],
+          "prop": [
+            {
+              "type": "property",
+              "sort": "alphabetical"
+            }
+          ],
+          "method": [
+            {
+              "type": "method",
+              "sort": "alphabetical"
+            }
+          ]
+        },
+        "accessorPairPositioning": "getThenSet"
+      }
+    ]
+  }
+}
