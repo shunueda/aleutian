@@ -4,8 +4,20 @@
     "target": "es2017",
     "module": "ESNext",
     "allowSyntheticDefaultImports": true,
-    "allowJs": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "strict": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "downlevelIteration": true,
     "lib": ["es2021"],
+    "noImplicitOverride": true,
+    "baseUrl": "src",
+    "paths": {
+      "@collection/*": ["collection/*"],
+      "@monad/*": ["monad/*"],
+      "@util/*": ["util/*"]
+    }
   },
   "ts-node": {
     "swc": true
