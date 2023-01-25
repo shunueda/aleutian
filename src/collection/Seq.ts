@@ -6,7 +6,7 @@ export class Seq<T> extends AbstractSequence<T> {
     return new Seq<T>()
   }
 
-  public static override from<T>(elements: AbstractSequence<T>): Seq<T> {
+  public static override from<T>(elements: T[]): Seq<T> {
     return new Seq(...elements)
   }
 
@@ -23,33 +23,29 @@ export class Seq<T> extends AbstractSequence<T> {
     )
   }
 
-  private readonly elements: T[] = []
+  protected readonly elements: T[]
 
   public constructor(...elements: T[]) {
     super()
-    this.elements.push(...elements)
+    this.elements = structuredClone(elements)
+    this.updateIndex()
   }
 
-  public *[Symbol.iterator](): Iterator<T> {
+  public concat(suffix: Iterable<T>): Seq<T> {
+    return new Seq(...this.elements, ...suffix)
+  }
+  public *iterator(): Iterator<T> {
     for (const elem of this.elements) {
       yield elem
     }
   }
 
-  public concat(suffix: Iterable<T>): Iterable<T> {
-    return new Seq(...this.elements, ...suffix)
-  }
-
-  public count(predicate: (elem: T) => boolean): number {
-    return this.elements.filter(predicate).length
+  public map<R>(f: (elem: T) => R): Seq<R> {
+    return new Seq<R>(...this.elements.map(e => f(e)))
   }
 
   public reversed(): Seq<T> {
     return new Seq<T>(...[...this.elements].reverse())
-  }
-
-  public size(): number {
-    return this.elements.length
   }
 
   public toString(): string {

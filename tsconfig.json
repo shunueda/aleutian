@@ -10,16 +10,9 @@
     "strict": true,
     "noPropertyAccessFromIndexSignature": true,
     "downlevelIteration": true,
-    "lib": ["es2021"],
-    "noImplicitOverride": true,
-    "baseUrl": "src",
-    "paths": {
-      "@collection/*": ["collection/*"],
-      "@monad/*": ["monad/*"],
-      "@util/*": ["util/*"]
-    }
-  },
-  "ts-node": {
-    "swc": true
+    "lib": [
+      "ESNext"
+    ],
+    "noImplicitOverride": true
   }
 }
