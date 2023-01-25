@@ -3,7 +3,8 @@
     "parser": {
       "syntax": "typescript",
       "topLevelAwait": false,
-      "tsx": true
+      "tsx": false,
+      "decorators": true
     },
     "target": "es2022"
   }

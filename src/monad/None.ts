@@ -1,7 +1,11 @@
 import { Option } from './Option'
 
-export class None<T> extends Option<T> {
-  public constructor() {
-    super()
+export class None extends Option<never> {
+  public override isEmpty(): boolean {
+    return true
+  }
+
+  public override toString(): string {
+    return `${Option.name}.${None.name}`
   }
 }

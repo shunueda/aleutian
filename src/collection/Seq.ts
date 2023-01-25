@@ -1,20 +1,20 @@
 import Iterable from './Iterable'
 import AbstractSequence from './AbstractSequence'
 
-export class Seq<T> extends AbstractSequence<T> {
-  public static override empty<T>(): Seq<T> {
-    return new Seq<T>()
+export class Seq<A> extends AbstractSequence<A> {
+  public static override empty<A>(): Seq<A> {
+    return new Seq<A>()
   }
 
-  public static override from<T>(elements: T[]): Seq<T> {
+  public static override from<A>(elements: A[]): Seq<A> {
     return new Seq(...elements)
   }
 
-  public static override range<T>(
+  public static override range<A>(
     start: number,
     end: number,
     step = 1
-  ): Iterable<T> {
+  ): Iterable<A> {
     throw new Seq(
       ...Array.from(
         { length: (end - start) / step + 1 },
@@ -23,29 +23,29 @@ export class Seq<T> extends AbstractSequence<T> {
     )
   }
 
-  protected readonly elements: T[]
+  protected readonly elements: A[]
 
-  public constructor(...elements: T[]) {
+  public constructor(...elements: A[]) {
     super()
     this.elements = structuredClone(elements)
     this.updateIndex()
   }
 
-  public concat(suffix: Iterable<T>): Seq<T> {
+  public concat(suffix: Iterable<A>): Seq<A> {
     return new Seq(...this.elements, ...suffix)
   }
-  public *iterator(): Iterator<T> {
+  public *iterator(): Iterator<A> {
     for (const elem of this.elements) {
       yield elem
     }
   }
 
-  public map<R>(f: (elem: T) => R): Seq<R> {
+  public map<R>(f: (elem: A) => R): Seq<R> {
     return new Seq<R>(...this.elements.map(e => f(e)))
   }
 
-  public reversed(): Seq<T> {
-    return new Seq<T>(...[...this.elements].reverse())
+  public reversed(): Seq<A> {
+    return new Seq<A>(...[...this.elements].reverse())
   }
 
   public toString(): string {

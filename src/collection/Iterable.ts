@@ -1,50 +1,50 @@
-import util from 'util'
 import { isNumeric } from '../util/isNumeric'
+import { Stringifiable } from '../util/Stringifiable'
 
-export default abstract class Iterable<T> implements Record<number, T> {
-  [index: number]: T
+export default abstract class Iterable<A>
+  extends Stringifiable
+  implements Record<number, A>
+{
+  [index: number]: A
 
-  public static empty<T>(): Iterable<T> {
+  public static empty<B>(): Iterable<B> {
     throw new Error()
   }
 
-  public static from<T>(elements: T[]): Iterable<T> {
+  public static from<A>(elements: A[]): Iterable<A> {
     throw new Error()
   }
 
-  public [Symbol.iterator](): Iterator<T> {
+  public [Symbol.iterator](): Iterator<A> {
     return this.iterator()
   }
 
-  public [util.inspect.custom]() {
-    return this.toString()
-  }
-  public abstract concat(suffix: Iterable<T>): Iterable<T>
-  public count(predicate: (elem: T) => boolean): number {
+  public abstract concat(suffix: Iterable<A>): Iterable<A>
+
+  public count(predicate: (elem: A) => boolean): number {
     return Array.from(this).filter(predicate).length
   }
-  public foreach<R>(f: (elem: T) => R): void {
+
+  public foreach<B>(f: (elem: A) => B): void {
     Array.from(this).forEach(elem => f(elem))
   }
-  public foreachIndexed<R>(f: (elem: T, index: number) => R): void {
+
+  public foreachIndexed<B>(f: (elem: A, index: number) => B): void {
     Array.from(this).forEach((elem, i) => f(elem, i))
   }
-  public abstract iterator(): Iterator<T>
 
-  public abstract map<R>(f: (elem: T) => R): Iterable<R>
+  public abstract iterator(): Iterator<A>
+
+  public abstract map<B>(f: (elem: A) => B): Iterable<B>
 
   public size(): number {
     return Array.from(this).length
   }
 
-  public abstract toString(): string
-
   protected updateIndex(): void {
     Object.getOwnPropertyNames(this)
       .filter(isNumeric)
-      .forEach(index => {
-        Reflect.deleteProperty(this, index)
-      })
+      .forEach(index => Reflect.deleteProperty(this, index))
     this.foreachIndexed((value, index) => {
       Object.defineProperty(this, index, {
         value,
