@@ -1,4 +1,4 @@
-import util from 'util'
+import util from 'node:util'
 
 export abstract class Stringifiable {
   public [util.inspect.custom]() {
