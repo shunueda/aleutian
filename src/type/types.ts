@@ -1,1 +1,1 @@
-type NullAble<A> = A | undefined | null
+type Nullable<A> = A | undefined | null

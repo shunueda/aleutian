@@ -1,3 +1,3 @@
-export function addDoubleQuoteIfString(value: unknown) {
-  return typeof value === 'string' ? `"${value}"` : value
+export function addDoubleQuoteIfString(value: unknown): string {
+  return typeof value === 'string' ? `"${value}"` : String(value)
 }

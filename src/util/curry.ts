@@ -1,4 +1,4 @@
-export function curry1<A, R>(f: (a: A) => R): (a: A) => R {
+export function curry<A, R>(f: (a: A) => R): (a: A) => R {
   return (a: A) => f(a)
 }
 

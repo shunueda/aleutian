@@ -1,8 +1,8 @@
 import { isNumeric } from '../util/isNumeric'
-import { Stringifiable } from '../util/Stringifiable'
+import { Base } from '../Base'
 
 export default abstract class Iterable<A>
-  extends Stringifiable
+  extends Base
   implements Record<number, A>
 {
   [index: number]: A
@@ -11,7 +11,7 @@ export default abstract class Iterable<A>
     throw new Error()
   }
 
-  public static from<A>(elements: A[]): Iterable<A> {
+  public static from<A>(elements: Array<A>): Iterable<A> {
     throw new Error()
   }
 

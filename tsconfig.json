@@ -11,6 +11,11 @@
     "strict": true,
     "noPropertyAccessFromIndexSignature": true,
     "downlevelIteration": true,
+    "strictFunctionTypes": true,
+    "alwaysStrict": true,
+    "strictPropertyInitialization": true,
+    "strictNullChecks": true,
+    "strictBindCallApply": true,
     "lib": [
       "ESNext"
     ],

@@ -6,7 +6,7 @@ export class Seq<A> extends AbstractSequence<A> {
     return new Seq<A>()
   }
 
-  public static override from<A>(elements: A[]): Seq<A> {
+  public static override from<A>(elements: Array<A>): Seq<A> {
     return new Seq(...elements)
   }
 
@@ -23,9 +23,8 @@ export class Seq<A> extends AbstractSequence<A> {
     )
   }
 
-  protected readonly elements: A[]
-
-  public constructor(...elements: A[]) {
+  protected readonly elements: ReadonlyArray<A>
+  public constructor(...elements: Array<A>) {
     super()
     this.elements = structuredClone(elements)
     this.updateIndex()
