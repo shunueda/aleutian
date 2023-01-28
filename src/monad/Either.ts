@@ -9,11 +9,11 @@ export abstract class Either<out A, out B> extends Base {
   }
 
   public static Left<A>(value: A): Left<A> {
-    return Either.Left(value)
+    return new Left(value)
   }
 
   public static Right<B>(value: B): Right<B> {
-    return Either.Right(value)
+    return new Right(value)
   }
 
   public flatMap<C>(f: (right: B) => Either<A, C>): Either<A, C> {

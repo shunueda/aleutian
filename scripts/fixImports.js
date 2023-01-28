@@ -90,8 +90,8 @@ const defaultModuleFilter = function (importedModule) {
   return (
     !path.isAbsolute(importedModule) &&
     !importedModule.startsWith('@') &&
-    !importedModule.endsWith('.js')
-  )
+    !importedModule.endsWith('.js') &&
+   )
 }
 
 const defaultOptions = {
@@ -99,4 +99,4 @@ const defaultOptions = {
   moduleFilter: defaultModuleFilter
 }
 
-await run('dist', defaultOptions)
+await run(process.argv[2], defaultOptions)

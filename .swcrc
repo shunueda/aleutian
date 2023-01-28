@@ -1,11 +1,19 @@
 {
+  "minify": true,
   "jsc": {
+    "keepClassNames": true,
     "parser": {
       "syntax": "typescript",
-      "topLevelAwait": false,
-      "tsx": false,
-      "decorators": true
+      "decorators": true,
+       "privateMethod": true,
     },
-    "target": "es2022"
-  }
+    "minify": {
+      "compress": {
+        "unused": true
+      },
+      "mangle": true
+    },
+    "target": "es2016"
+  },
+  "isModule": true
 }
