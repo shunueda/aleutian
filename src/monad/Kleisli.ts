@@ -1,22 +1,17 @@
-import { None, Option, Some } from './Option'
-import { compose } from '../util/function'
+import { Monad } from '../Monad'
 
-// A: boolean => B: string
-export class Kleisli<F, A, B> {
-  public constructor(private f: (arg: A) => F) {}
+export class Kleisli<A, B> {
+  public constructor(private readonly f: (arg: A) => Monad<B>) {}
 
-  // public compose<Z>(reciprocal: Kleisli<F, Z, A>) {
-  //   return new Kleisli<>()
-  // }
-
-  // Z: number => A: boolean
-  public andThen<ZW, Z>(k: Kleisli<ZW, B, Z>) {
-    return new Kleisli((arg: A) => {
-      k.run()
-    })
+  public andThen<Z>(k: Kleisli<B, Z>) {
+    return new Kleisli<A, Z>((arg: A) => this.f(arg).flatMap(k.f))
   }
 
-  public run(arg: A): F {
+  public compose<Z>(k: Kleisli<Z, A>) {
+    return new Kleisli<Z, B>((arg: Z) => k.f(arg).flatMap(this.f))
+  }
+
+  public run(arg: A): Monad<B> {
     return this.f(arg)
   }
 }

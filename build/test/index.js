@@ -1,1 +1,1 @@
-import{Kleisli as e}from"../src/monad/Kleisli.js";import{None as n,Some as o}from"../src/monad/Option.js";new e(e=>RegExp("-?[0-9]+").test(e)?new o(parseInt(e)):new n),new e(e=>0!=e?new o(1/e):new n),console.log(1/0);
+import{Kleisli as e}from"../src/monad/Kleisli.js";import{None as n,Some as o}from"../src/monad/Option.js";let s=new e(e=>RegExp("-?[0-9]+").test(e)?new o(parseInt(e)):new n),r=new e(e=>0!=e?new o(1/e):new n);console.log(r.compose(s).run("a"));

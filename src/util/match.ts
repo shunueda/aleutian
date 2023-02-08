@@ -1,6 +1,7 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 /* eslint-disable  @typescript-eslint/ban-types */
 export const _ = {}
+
 export function match<A>(expr: Object) {
   return (...when: Array<[Function | typeof _, (value: any) => A]>) => {
     for (const caseE of when) {

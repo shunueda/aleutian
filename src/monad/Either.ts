@@ -2,8 +2,12 @@ import { identity } from '../util/predef'
 import { Option } from './Option'
 import { Base } from '../Base'
 import { addDoubleQuoteIfString } from '../util/util'
+import { Comonad } from '../Comonad'
 
-export abstract class Either<out A, out B> extends Base {
+export abstract class Either<out A, out B>
+  extends Base
+  implements Comonad<A, B>
+{
   public static flatten<A, B>(nested: Either<A, Either<A, B>>): Either<A, B> {
     return nested.flatMap(identity)
   }
@@ -96,6 +100,7 @@ export class Right<A> extends Either<never, A> {
 export class Left<B> extends Either<B, never> {
   public isLeft = true
   public isRight = false
+
   public constructor(public readonly value: B) {
     super()
   }

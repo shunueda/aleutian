@@ -1,5 +1,3 @@
-import { Seq } from './Seq'
-
 /**
  * @underConsideration
  * MutableSeq may not be implemented

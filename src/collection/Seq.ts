@@ -24,6 +24,7 @@ export class Seq<A> extends AbstractSequence<A> {
   }
 
   protected readonly elements: ReadonlyArray<A>
+
   public constructor(...elements: Array<A>) {
     super()
     this.elements = structuredClone(elements)
@@ -33,6 +34,7 @@ export class Seq<A> extends AbstractSequence<A> {
   public concat(suffix: Iterable<A>): Seq<A> {
     return new Seq(...this.elements, ...suffix)
   }
+
   public *iterator(): Iterator<A> {
     for (const elem of this.elements) {
       yield elem

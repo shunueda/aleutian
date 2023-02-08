@@ -1,14 +1,14 @@
 import { Base } from '../Base'
 import { addDoubleQuoteIfString } from '../util/util'
 import { identity } from '../util/predef'
-import { Monad } from './Monad'
+import { Monad } from '../Monad'
 
 /**
  * @TODO
  * lift
  * zip
  */
-export abstract class Option<out A> extends Base {
+export abstract class Option<out A> extends Base implements Monad<A> {
   public static catch<A>(
     recover: (throwable: Error) => Option<A>,
     f: () => A
@@ -113,6 +113,7 @@ export class Some<out A> extends Option<A> {
   public constructor(public readonly value: A) {
     super()
   }
+
   public isEmpty(): boolean {
     return false
   }

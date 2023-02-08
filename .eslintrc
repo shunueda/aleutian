@@ -14,6 +14,7 @@
   "rules": {
     "curly": "error",
     "@typescript-eslint/explicit-member-accessibility": "error",
+    "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/array-type": [
       "error",
       {
