@@ -1,1 +1,0 @@
-export class Kleisli{constructor(t){this.f=t}andThen(t){return new Kleisli(e=>this.f(e).flatMap(t.f))}compose(t){return new Kleisli(e=>t.f(e).flatMap(this.f))}run(t){return this.f(t)}}

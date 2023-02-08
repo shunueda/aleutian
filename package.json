@@ -18,7 +18,7 @@
     "pretest": "yarn build",
     "test": "mocha dist/test",
     "lazyTest": "yarn pretest && node build/test",
-    "lint": "eslint --fix src",
+    "lint": "eslint src --ext .ts",
     "postlint": "yarn format"
   },
   "devDependencies": {

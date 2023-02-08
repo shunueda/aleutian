@@ -1,1 +1,0 @@
-import r from"./Iterable.js";export default class t extends r{static range(r,t,e=1){throw Error()}}

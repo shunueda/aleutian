@@ -3,11 +3,11 @@ import { Monad } from '../Monad'
 export class Kleisli<A, B> {
   public constructor(private readonly f: (arg: A) => Monad<B>) {}
 
-  public andThen<Z>(k: Kleisli<B, Z>) {
+  public andThen<Z>(k: Kleisli<B, Z>): Kleisli<A, Z> {
     return new Kleisli<A, Z>((arg: A) => this.f(arg).flatMap(k.f))
   }
 
-  public compose<Z>(k: Kleisli<Z, A>) {
+  public compose<Z>(k: Kleisli<Z, A>): Kleisli<Z, B> {
     return new Kleisli<Z, B>((arg: Z) => k.f(arg).flatMap(this.f))
   }
 

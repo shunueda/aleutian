@@ -1,1 +1,0 @@
-export const _={};export function match(r){return(...t)=>{for(let o of t)if(o[0]===_||o[0].name==r.constructor.name)return o[1](r);throw Error()}}
