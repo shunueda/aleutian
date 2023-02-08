@@ -1,102 +1,233 @@
-import * as fs from 'fs'
-import * as path from 'path'
+// fix-esm-import-path @ npm
+import fs from 'fs'
+import path from 'path'
 
-// https://gist.github.com/lovasoa/8691344
-async function* walk(dir) {
-  for await (const d of await fs.promises.opendir(dir)) {
-    const entry = path.join(dir, d.name)
-    if (d.isDirectory()) {
-      yield* walk(entry)
-    } else if (d.isFile()) {
-      yield entry
+let entryPoints = []
+let missingFiles = []
+
+for (let i = 2; i < process.argv.length; i++) {
+  let entryPoint = process.argv[i]
+  if (fs.existsSync(entryPoint)) {
+    entryPoints.push(entryPoint)
+  } else {
+    missingFiles.push(entryPoint)
+  }
+}
+
+if (missingFiles.length > 0) {
+  let name = missingFiles.map(name => JSON.stringify(name)).join(', ')
+  console.error(`entryPoint ${name} does not exist`)
+  process.exit(1)
+}
+
+if (entryPoints.length === 0) {
+  console.error('missing entryPoint in argument')
+  process.exit(1)
+}
+
+function findNodeModuleDir(srcFile, name) {
+  let dir = path.dirname(srcFile)
+  for (;;) {
+    let files = fs.readdirSync(dir)
+    if (files.includes('node_modules')) {
+      let moduleDir = path.join(dir, 'node_modules', name)
+      if (fs.existsSync(moduleDir)) {
+        return moduleDir
+      }
+    }
+    dir = path.join(dir, '..')
+    if (path.resolve(dir) === '/') {
+      return null
     }
   }
 }
 
-function resolveImportPath(sourceFile, importPath, options) {
-  const sourceFileAbs = path.resolve(process.cwd(), sourceFile)
-  const root = path.dirname(sourceFileAbs)
-  const { moduleFilter = defaultModuleFilter } = options
+function getModuleEntryFile(dir) {
+  let entryFile = 'index.js'
+  let files = fs.readdirSync(dir)
+  if (files.includes('package.json')) {
+    let text = fs.readFileSync(path.join(dir, 'package.json')).toString()
+    let pkg = JSON.parse(text)
+    entryFile = pkg.module || pkg.main || entryFile
+  }
+  return path.join(dir, entryFile)
+}
 
-  if (moduleFilter(importPath)) {
-    const importPathAbs = path.resolve(root, importPath)
-    let possiblePath = [
-      path.resolve(importPathAbs, './index.ts'),
-      path.resolve(importPathAbs, './index.js'),
-      importPathAbs + '.ts',
-      importPathAbs + '.js'
-    ]
+function fixImport({ srcFile, importCode, from, to }) {
+  let newImportCode = importCode.replace(from, to)
+  let code = fs.readFileSync(srcFile).toString()
+  code = code.replace(importCode, newImportCode)
+  fs.writeFileSync(srcFile, code)
+  return newImportCode
+}
 
-    if (possiblePath.length) {
-      for (let i = 0; i < possiblePath.length; i++) {
-        let entry = possiblePath[i]
-        if (fs.existsSync(entry)) {
-          const resolved = path.relative(root, entry.replace(/\.ts$/, '.js'))
+function scanModuleMainFile({ file }) {
+  // no need?
+  // log(`[scanModuleMainFile] TODO`, { file })
+}
 
-          if (!resolved.startsWith('.')) {
-            return './' + resolved
-          }
+function scanModule({ srcFile, importCode, name }) {
+  let numOfDirInName = name.split('/').length - 1
+  if (name.includes('@')) {
+    numOfDirInName--
+  }
+  if (numOfDirInName == 0) {
+    return
+  }
+  let dir = findNodeModuleDir(srcFile, name)
+  if (dir) {
+    let mainFile = isFileExists(dir) ? dir : getModuleEntryFile(dir)
+    return scanModuleMainFile({ file: mainFile })
+  }
 
-          return resolved
+  let jsName = name + '.js'
+  let jsFile = findNodeModuleDir(srcFile, jsName)
+  if (!jsFile) {
+    console.error(`Error: cannot resolve module`, {
+      name,
+      srcFile,
+      importCode
+    })
+    process.exit(1)
+  }
+  fixImport({ srcFile, importCode, from: name, to: jsName })
+  scanModuleMainFile({ file: jsFile })
+}
+
+function resolveImportName({ srcFile, name }) {
+  if (name.startsWith('/')) {
+    return { type: 'absolute', name }
+  }
+  if (name.startsWith('./')) {
+    let dir = path.dirname(srcFile)
+    name = path.join(dir, name)
+    return { type: 'relative', name }
+  }
+  if (name.startsWith('../')) {
+    let dir = path.dirname(srcFile)
+    name = path.join(dir, name)
+    return { type: 'relative', name }
+  }
+  return { type: 'module', name }
+}
+
+function scanImport({ srcFile, importCode, name }) {
+  let { type, name: importName } = resolveImportName({ srcFile, name })
+  if (type == 'module') {
+    return scanModule({ srcFile, importCode, name })
+  }
+  let importFile = resolveImportFile(importName)
+  if (!importFile) {
+    console.error(`[scanImport] File not found:`, {
+      srcFile,
+      importName,
+      importCode,
+      name
+    })
+    process.exit(1)
+  }
+  let ext_list = ['.js', '.jsx', '.ts', 'tsx']
+  if (
+    !importFile.startsWith(importName + '/index') &&
+    !ext_list.some(ext => importName.endsWith(ext))
+  ) {
+    for (let ext of ext_list) {
+      if (!importName.endsWith('.js') && importFile.endsWith(ext)) {
+        importCode = fixImport({
+          srcFile,
+          importCode,
+          from: name,
+          to: name + '.js'
+        })
+        break
+      }
+    }
+  }
+  return scanFile({ srcFile: importFile })
+}
+
+function isFileExists(file) {
+  return fs.existsSync(file) && fs.statSync(file).isFile()
+}
+
+function resolveImportFile(file) {
+  if (isFileExists(file)) {
+    return file
+  }
+  for (let jsExt of ['.js', '.jsx']) {
+    let jsFile = file + jsExt
+    if (isFileExists(jsFile)) {
+      return jsFile
+    }
+    for (let tsExt of ['.ts', '.tsx']) {
+      let tsFile = file + tsExt
+      if (isFileExists(tsFile)) {
+        return tsFile
+      }
+      if (file.endsWith(jsExt)) {
+        tsFile = file.slice(0, file.length - jsExt.length) + tsExt
+        if (isFileExists(tsFile)) {
+          return tsFile
         }
       }
     }
   }
 
+  for (let indexFile of ['index.js', 'index.jsx', 'index.ts', 'index.tsx']) {
+    indexFile = path.join(file, indexFile)
+    if (isFileExists(indexFile)) {
+      return indexFile
+    }
+  }
   return null
 }
 
-function replace(filePath, outFilePath, options) {
-  const code = fs.readFileSync(filePath).toString()
-  const newCode = code.replace(
-    /(import|export) (.+?) from ('[^\n']+'|"[^\n"]+");/gs,
-    function (found, action, imported, from) {
-      const importPath = from.slice(1, -1)
-      const resolvedPath = resolveImportPath(filePath, importPath, options)
+let visit_file_set = new Set()
 
-      if (resolvedPath) {
-        // console.log('\t', importPath, resolvedPath)
-        return `${action} ${imported} from '${resolvedPath}';`
+function scanFile({ srcFile }) {
+  if (visit_file_set.has(srcFile)) {
+    return
+  }
+  visit_file_set.add(srcFile)
+  let code = fs.readFileSync(srcFile).toString()
+  for (let regex of [
+    /.*import .* from '(.*)'.*/g,
+    /.*import .* from "(.*)".*/g,
+    /.*export .* from '(.*)'.*/g,
+    /.*export .* from "(.*)".*/g
+  ]) {
+    for (let match of code.matchAll(regex)) {
+      let [importCode, name] = match
+      if (importCode.includes('import type')) {
+        continue
       }
-
-      return found
-    }
-  )
-
-  if (code !== newCode) {
-    fs.writeFileSync(outFilePath, newCode)
-  }
-}
-
-// Then, use it with a simple async for loop
-async function run(srcDir, options = defaultOptions) {
-  const { sourceFileFilter = defaultSourceFileFilter } = options
-
-  for await (const entry of walk(srcDir)) {
-    if (sourceFileFilter(entry)) {
-      // console.log(entry)
-      replace(entry, entry, options)
+      scanImport({ srcFile, importCode, name })
     }
   }
 }
 
-const defaultSourceFileFilter = function (sourceFilePath) {
-  return (
-    /\.(js|ts)$/.test(sourceFilePath) && !/node_modules/.test(sourceFilePath)
-  )
+function scanEntryPoint(file) {
+  let stat = fs.statSync(file)
+  if (stat.isFile()) {
+    if (file.endsWith('.js') || file.endsWith('.ts')) {
+      scanFile({ srcFile: file })
+    }
+    // e.g. package.json, .gitignore
+    return
+  }
+  if (stat.isDirectory()) {
+    fs.readdirSync(file).forEach(filename => {
+      if (filename === 'node_modules') {
+        return
+      }
+      scanEntryPoint(path.join(file, filename))
+    })
+    return
+  }
+  // e.g. socket file
+  console.log('skip unsupported file:', file)
 }
 
-const defaultModuleFilter = function (importedModule) {
-  return (
-    !path.isAbsolute(importedModule) &&
-    !importedModule.startsWith('@') &&
-    !importedModule.endsWith('.js') &&
-   )
+for (let entryPoint of entryPoints) {
+  scanEntryPoint(entryPoint)
 }
-
-const defaultOptions = {
-  sourceFileFilter: defaultSourceFileFilter,
-  moduleFilter: defaultModuleFilter
-}
-
-await run(process.argv[2], defaultOptions)

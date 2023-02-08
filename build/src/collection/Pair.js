@@ -1,0 +1,1 @@
+import{Base as t}from"../Base.js";import{addDoubleQuoteIfString as s}from"../util/util.js";export class Pair extends t{constructor(t,s){super(),this.first=t,this.second=s}toString(){return`(${s(this.first)}, ${s(this.second)})`}toTuple(){return[this.first,this.second]}}

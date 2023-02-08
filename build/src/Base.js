@@ -1,0 +1,1 @@
+import t from"node:util";export class Base{[t.inspect.custom](){return this.toString()}}

@@ -1,19 +1,23 @@
 {
   "minify": true,
   "jsc": {
-    "keepClassNames": true,
+    "keepClassNames": false,
     "parser": {
       "syntax": "typescript",
       "decorators": true,
        "privateMethod": true,
     },
     "minify": {
-      "compress": {
-        "unused": true
-      },
-      "mangle": true
+      "mangle": true,
+      "compress": true
     },
-    "target": "es2016"
+    "target": "es2022"
   },
-  "isModule": true
+  "isModule": true,
+  "module": {
+    "type": "es6",
+    "strict": true,
+    "strictMode": true,
+    "lazy": true
+  }
 }

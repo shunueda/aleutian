@@ -1,0 +1,1 @@
+export default function t(t){return class e extends t{constructor(...n){if(new.target!==e)throw Error(`Cannot extend a final class "${t.name}"`);super(...n)}}}

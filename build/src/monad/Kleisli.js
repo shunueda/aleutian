@@ -1,0 +1,1 @@
+export class Kleisli{constructor(r){this.f=r}run(r){return this.f(r)}}

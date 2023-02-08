@@ -1,6 +1,7 @@
 import { Base } from '../Base'
 import { addDoubleQuoteIfString } from '../util/util'
 import { identity } from '../util/predef'
+import { Monad } from './Monad'
 
 /**
  * @TODO
@@ -108,7 +109,7 @@ export abstract class Option<out A> extends Base {
   }
 }
 
-class Some<out A> extends Option<A> {
+export class Some<out A> extends Option<A> {
   public constructor(public readonly value: A) {
     super()
   }
@@ -117,7 +118,7 @@ class Some<out A> extends Option<A> {
   }
 }
 
-class None extends Option<never> {
+export class None extends Option<never> {
   public isEmpty(): boolean {
     return true
   }

@@ -1,0 +1,1 @@
+export function isNumeric(t){return/^-?\d+$/.test(t)}
