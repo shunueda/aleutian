@@ -1,10 +1,7 @@
 import { isNumeric } from '../util/isNumeric'
 import { Base } from '../Base'
 
-export default abstract class Iterable<A>
-  extends Base
-  implements Record<number, A>
-{
+export default abstract class Iterable<A> extends Base {
   [index: number]: A
 
   public static empty<B>(): Iterable<B> {

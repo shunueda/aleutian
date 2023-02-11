@@ -10,7 +10,6 @@ export class Kleisli<A, B> {
   public compose<Z>(k: Kleisli<Z, A>): Kleisli<Z, B> {
     return new Kleisli<Z, B>((arg: Z) => k.f(arg).flatMap(this.f))
   }
-
   public run(arg: A): Monad<B> {
     return this.f(arg)
   }
