@@ -1,11 +1,11 @@
 {
-  "name": "kleisli.js",
+  "name": "aleutian",
   "version": "1.0.0",
   "description": "Functional library for JavaScript/Typescript",
   "type": "module",
-  "main": "src/index.ts",
+  "main": "build/src/index.js",
   "repository": {
-    "url": "https://github.com/shunueda/kleisli.js.git"
+    "url": "https://github.com/shunueda/aleutian.git"
   },
   "scripts": {
     "format": "prettier --ignore-path .gitignore \"**/*.+(ts|js|tsx)\" --write",
@@ -19,7 +19,8 @@
     "test": "mocha dist/test",
     "lazyTest": "yarn pretest && node build/test",
     "lint": "eslint src --ext .ts",
-    "postlint": "yarn format"
+    "postlint": "yarn format",
+    "publish": "yarn build && yarn publish"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",
