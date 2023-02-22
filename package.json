@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Functional library for JavaScript/Typescript",
   "type": "module",
-  "main": "build/src/index.js",
+  "main": "src/index.ts",
   "repository": {
     "url": "https://github.com/shunueda/aleutian.git"
   },
@@ -16,11 +16,11 @@
     "build": "swc dist/src -q --out-dir build & swc dist/test -q --out-dir build",
     "postbuild": "yarn clean",
     "pretest": "yarn build",
-    "test": "mocha dist/test",
+    "test": "mocha build/test",
     "lazyTest": "yarn pretest && node build/test",
     "lint": "eslint src --ext .ts",
     "postlint": "yarn format",
-    "publish": "yarn build && yarn publish"
+    "publish": "yarn publish"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",
@@ -34,7 +34,7 @@
     "mocha": "^10.2.0",
     "nodemon": "^2.0.20",
     "prettier": "^2.8.1",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.5"
   },
   "author": "Shun Ueda",
   "license": "MIT"

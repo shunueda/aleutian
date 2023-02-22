@@ -5,15 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4cc074d-d204-415d-b688-6f439b299ce9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/aleutian.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/collection/Map.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kleisli.js.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/AbstractSequence.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/AbstractSequence.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/Iterable.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/Iterable.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/MutableSeq.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/MutableSeq.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/Seq.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/Seq.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/type/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/type/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/typeclass/Monoid.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/AbstractMap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/typeclass/Semigroup.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/typeclass/Semiring.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/monad/Option.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/monad/Option.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,16 +30,30 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="2La65vjwlAALfOrL3Wwzs7FWxen" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -43,11 +64,17 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "C:\\dev\\shunueda\\aleutian\\node_modules\\typescript\\lib",
+    "prettierjs.PrettierConfiguration.Package": "yarn:package.json:prettier",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.file-colors",
+    "ts.external.directory.path": "C:\\Users\\me\\AppData\\Local\\JetBrains\\Toolbox\\apps\\IDEA-U\\ch-0\\223.8617.56\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\dev\shunueda\aleutian\test\monad" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -58,10 +85,27 @@
       <updated>1676096667367</updated>
       <workItem from="1676096668279" duration="1925000" />
       <workItem from="1676100119495" duration="1859000" />
+      <workItem from="1676313537113" duration="8771000" />
+      <workItem from="1676444257730" duration="23487000" />
+      <workItem from="1676918092466" duration="16659000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

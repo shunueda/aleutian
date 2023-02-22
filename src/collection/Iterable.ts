@@ -1,15 +1,16 @@
-import { isNumeric } from '../util/isNumeric'
 import { Base } from '../Base'
 
 export default abstract class Iterable<A> extends Base {
-  [index: number]: A
-
   public static empty<B>(): Iterable<B> {
     throw new Error()
   }
 
-  public static from<A>(elements: Array<A>): Iterable<A> {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static from<A>(...elements: Array<A>): Iterable<A> {
     throw new Error()
+  }
+  protected constructor() {
+    super()
   }
 
   public [Symbol.iterator](): Iterator<A> {
@@ -32,21 +33,8 @@ export default abstract class Iterable<A> extends Base {
 
   public abstract iterator(): Iterator<A>
 
-  public abstract map<B>(f: (elem: A) => B): Iterable<B>
-
   public size(): number {
     return Array.from(this).length
   }
 
-  protected updateIndex(): void {
-    Object.getOwnPropertyNames(this)
-      .filter(isNumeric)
-      .forEach(index => Reflect.deleteProperty(this, index))
-    this.foreachIndexed((value, index) => {
-      Object.defineProperty(this, index, {
-        value,
-        writable: false
-      })
-    })
-  }
 }
