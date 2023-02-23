@@ -29,22 +29,22 @@ export class Map<A, B> extends AbstractMap<A, B> {
   }
 
   public map<C>(f: (k: A, v: B) => C): Map<A, C> {
-    return new Map(...[...this.instance].map(([k, v]) => [k, f(k, v)]) as Array<[A, C]>)
+    return new Map(
+      ...([...this.instance].map(([k, v]) => [k, f(k, v)]) as Array<[A, C]>)
+    )
   }
-
 
   protected refresh(): void {
     return
   }
 
   public toString(): string {
-    return `${Map.name}(${
-      [...this.instance].flatMap(([k, v]) => `${k} -> ${v}`).join(', ')
-    })`
+    return `${Map.name}(${[...this.instance]
+      .flatMap(([k, v]) => `${k} -> ${v}`)
+      .join(', ')})`
   }
 
   public values(): Array<B> {
     return [...this.instance.values()]
   }
-
 }

@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4cc074d-d204-415d-b688-6f439b299ce9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/collection/Map.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/collection/AbstractSequence.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/AbstractSequence.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/collection/Iterable.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/Iterable.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/collection/MutableSeq.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/MutableSeq.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/collection/Seq.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/Seq.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/type/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/type/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typeclass/Monoid.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/AbstractMap.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typeclass/Semigroup.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typeclass/Semiring.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/monad/Option.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/monad/Option.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/Callable" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,11 +43,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/dev/shunueda/aleutian",
+    "last_opened_file_path": "C:/dev/shunueda/aleutian/build/test/index.js",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.mocha.mocha_node_package_dir": "yarn:package.json:mocha",
     "nodejs_package_manager_path": "yarn",
     "prettierjs.PrettierConfiguration.Package": "yarn:package.json:prettier",
     "settings.editor.selected.configurable": "reference.settings.ide.settings.file-colors",
@@ -74,6 +60,35 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\dev\shunueda\aleutian\test\monad" />
     </key>
+  </component>
+  <component name="RunManager" selected="Node.js.lazyTest">
+    <configuration name="lazyTest" type="NodeJSConfigurationType" path-to-js-file="build/test/index.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="Seq" type="mocha-javascript-test-runner" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>yarn:package.json:mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/test/collection/Seq.ts</test-file>
+      <test-names>
+        <name value="Seq" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Mocha.Seq" />
+      <item itemvalue="Node.js.lazyTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Mocha.Seq" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -88,6 +103,7 @@
       <workItem from="1676313537113" duration="8771000" />
       <workItem from="1676444257730" duration="23487000" />
       <workItem from="1676918092466" duration="16659000" />
+      <workItem from="1677004677201" duration="9543000" />
     </task>
     <servers />
   </component>
@@ -107,5 +123,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/build/test/index.js</url>
+          <line>1</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

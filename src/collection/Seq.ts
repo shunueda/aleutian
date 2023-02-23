@@ -25,7 +25,6 @@ export class Seq<A> extends AbstractSequence<A> {
 
   public constructor(protected readonly elements: Array<A>) {
     super()
-    this.refresh()
   }
 
   public asArray(): Array<A> {
@@ -36,7 +35,7 @@ export class Seq<A> extends AbstractSequence<A> {
     return new Seq([...this.elements, ...suffix])
   }
 
-  public* iterator(): Iterator<A> {
+  public *iterator(): Iterator<A> {
     for (const elem of this.elements) {
       yield elem
     }
@@ -50,8 +49,7 @@ export class Seq<A> extends AbstractSequence<A> {
     return new Seq<A>([...this.elements].reverse())
   }
 
-
-  public toString(): string {
+  public override toString(): string {
     return `${Seq.name}(${this.elements.join(', ')})`
   }
 }

@@ -20,7 +20,8 @@
     "lazyTest": "yarn pretest && node build/test",
     "lint": "eslint src --ext .ts",
     "postlint": "yarn format",
-    "publish": "yarn publish"
+    "publish": "yarn publish",
+    "nodemon": "nodemon --exec yarn lazyTest"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",

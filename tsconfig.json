@@ -16,6 +16,7 @@
     "strictPropertyInitialization": true,
     "strictNullChecks": true,
     "strictBindCallApply": true,
+    "noUncheckedIndexedAccess": true,
     "lib": [
       "ESNext"
     ],
