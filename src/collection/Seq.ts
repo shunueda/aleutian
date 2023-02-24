@@ -23,16 +23,8 @@ export class Seq<A> extends AbstractSequence<A> {
     return this.at(index)
   }
 
-  public asArray(): Array<A> {
-    return this.elements
-  }
-
-  // public concat(suffix: Seq<A>): Seq<A> {
-  //   return new Seq([...this.elements, ...Array.from(suffix)])
-  // }
-
-  public override concat(suffix: Seq<A>): Seq<A> {
-    return new Seq([])
+  public override concat(suffix: AbstractSequence<A>): Seq<A> {
+    return new Seq([...this, ...suffix])
   }
 
   public* iterator(): Iterator<A> {
@@ -41,8 +33,8 @@ export class Seq<A> extends AbstractSequence<A> {
     }
   }
 
-  public map<R>(f: (elem: A) => R): Seq<R> {
-    return new Seq<R>(this.elements.map(e => f(e)))
+  public map<B>(f: (elem: A) => B): Seq<B> {
+    return new Seq<B>(this.elements.map(e => f(e)))
   }
 
   public reversed(): Seq<A> {

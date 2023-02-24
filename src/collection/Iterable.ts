@@ -33,7 +33,7 @@ export default abstract class Iterable<out A, Args extends Array<unknown>, Retur
 
   public abstract iterator(): Iterator<A>
 
-  public abstract map<B>(f: (elem: A) => B): Iterable<B, Args, Return>
+  public abstract map<B>(f: (elem: A) => B): Iterable<B, [unknown], unknown>
 
   public size(): number {
     return Array.from(this).length
