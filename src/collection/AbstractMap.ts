@@ -1,6 +1,6 @@
 import Iterable from './Iterable'
 
-export abstract class AbstractMap<out A, out B> extends Iterable<[A, B]> {
+export abstract class AbstractMap<A, out B> extends Iterable<[A, B], [A], B> {
   protected instance = new Map<A, B>()
 
   protected constructor(...elements: Array<[A, B]>) {

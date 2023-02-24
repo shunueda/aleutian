@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4cc074d-d204-415d-b688-6f439b299ce9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/util/Callable" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Function.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Base.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Base.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/AbstractMap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/AbstractMap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/AbstractSequence.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/AbstractSequence.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/Iterable.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/Iterable.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/Map.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/Map.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/Seq.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/Seq.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/functionTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/functionTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +31,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -36,29 +49,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/dev/shunueda/aleutian/build/test/index.js",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.mocha.mocha_node_package_dir": "yarn:package.json:mocha",
-    "nodejs_package_manager_path": "yarn",
-    "prettierjs.PrettierConfiguration.Package": "yarn:package.json:prettier",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.file-colors",
-    "ts.external.directory.path": "C:\\Users\\me\\AppData\\Local\\JetBrains\\Toolbox\\apps\\IDEA-U\\ch-0\\223.8617.56\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/dev/shunueda/aleutian/build/test/index.js&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.mocha.mocha_node_package_dir&quot;: &quot;yarn:package.json:mocha&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;yarn:package.json:prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\dev\\shunueda\\aleutian\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\dev\shunueda\aleutian\test\monad" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\shunueda\aleutian\src" />
+      <recent name="C:\dev\shunueda\aleutian\src\type" />
+      <recent name="C:\dev\shunueda\aleutian\test" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.lazyTest">
@@ -104,6 +122,8 @@
       <workItem from="1676444257730" duration="23487000" />
       <workItem from="1676918092466" duration="16659000" />
       <workItem from="1677004677201" duration="9543000" />
+      <workItem from="1677092319571" duration="50699000" />
+      <workItem from="1677194753866" duration="7598000" />
     </task>
     <servers />
   </component>
@@ -129,11 +149,14 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/build/test/index.js</url>
-          <line>1</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="4" />
+          <line>9</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

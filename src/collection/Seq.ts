@@ -1,15 +1,7 @@
-import Iterable from './Iterable'
 import AbstractSequence from './AbstractSequence'
+import Iterable from './Iterable'
 
 export class Seq<A> extends AbstractSequence<A> {
-  public static override empty<A>(): Seq<A> {
-    return new Seq<A>([])
-  }
-
-  public static override from<A>(...elements: Array<A>): Seq<A> {
-    return new Seq(elements)
-  }
-
   public static override range(
     start: number,
     end: number,
@@ -27,15 +19,23 @@ export class Seq<A> extends AbstractSequence<A> {
     super()
   }
 
+  public override apply(index: number): A {
+    return this.at(index)
+  }
+
   public asArray(): Array<A> {
     return this.elements
   }
 
-  public concat(suffix: Iterable<A>): Seq<A> {
-    return new Seq([...this.elements, ...suffix])
+  // public concat(suffix: Seq<A>): Seq<A> {
+  //   return new Seq([...this.elements, ...Array.from(suffix)])
+  // }
+
+  public override concat(suffix: Seq<A>): Seq<A> {
+    return new Seq([])
   }
 
-  public *iterator(): Iterator<A> {
+  public* iterator(): Iterator<A> {
     for (const elem of this.elements) {
       yield elem
     }
