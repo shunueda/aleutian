@@ -1,4 +1,4 @@
-import { Base } from '../Base'
+import Base from '../Base'
 import { addDoubleQuoteIfString } from '../util/util'
 import { identity } from '../util/predef'
 import { Monad } from '../Monad'

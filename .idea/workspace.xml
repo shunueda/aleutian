@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4cc074d-d204-415d-b688-6f439b299ce9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/collection/Iterable.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/Iterable.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/collection/NonEmptySeq" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/collection/Seq.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/Seq.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +139,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/build/test/index.js</url>
-          <line>9</line>
+          <line>8</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>

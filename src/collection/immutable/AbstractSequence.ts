@@ -1,6 +1,10 @@
-import Iterable from './Iterable'
+import Iterable from '../Iterable'
 
-export default abstract class AbstractSequence<A> extends Iterable<A, [number], A> {
+export default abstract class AbstractSequence<out A> extends Iterable<
+  A,
+  [number],
+  A
+> {
   public static range(
     start: number,
     end: number,
@@ -20,6 +24,6 @@ export default abstract class AbstractSequence<A> extends Iterable<A, [number], 
   public join(separator?: string): string {
     return Array.from(this).reduce((acc, e) => acc + e, '')
   }
-
-  public abstract reversed(): AbstractSequence<A>
+  
+  public abstract override map<B>(f: (elem: A) => B): AbstractSequence<B>
 }

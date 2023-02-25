@@ -1,7 +1,6 @@
 import AbstractSequence from './AbstractSequence'
-import Iterable from './Iterable'
 
-export class Seq<A> extends AbstractSequence<A> {
+export class Seq<out A> extends AbstractSequence<A> {
   public static override range(
     start: number,
     end: number,
@@ -28,13 +27,11 @@ export class Seq<A> extends AbstractSequence<A> {
   }
 
   public* iterator(): Iterator<A> {
-    for (const elem of this.elements) {
-      yield elem
-    }
+    yield* this.elements
   }
 
-  public map<B>(f: (elem: A) => B): Seq<B> {
-    return new Seq<B>(this.elements.map(e => f(e)))
+  public override map<B>(f: (elem: A) => B): Seq<B> {
+    return new Seq<B>(this.elements.map(f))
   }
 
   public reversed(): Seq<A> {

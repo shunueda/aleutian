@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "alwaysStrict": true,
     "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -7,12 +8,15 @@
       "ESNext"
     ],
     "module": "esnext",
+    "moduleResolution": "node",
     "noImplicitAny": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "outDir": "dist",
     "sourceMap": true,
+    "strict": true,
+    "strictFunctionTypes": true,
     "target": "esnext",
     "downlevelIteration": true
   },

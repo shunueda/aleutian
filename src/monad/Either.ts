@@ -1,6 +1,6 @@
 import { identity } from '../util/predef'
 import { Option } from './Option'
-import { Base } from '../Base'
+import Base from '../Base'
 import { addDoubleQuoteIfString } from '../util/util'
 import { Comonad } from '../Comonad'
 
