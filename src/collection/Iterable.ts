@@ -1,3 +1,10 @@
+/*
+ * Modified by Shun Ueda
+ * Copyright (c) 2023 Shun Ueda
+ * This code is licensed under the MIT License.
+ * For details, see the LICENSE file at the root of this project.
+ */
+
 import Base from '../Base'
 
 export default abstract class Iterable<
@@ -27,9 +34,7 @@ export default abstract class Iterable<
     return this.iterator()
   }
 
-  public abstract concat(
-    suffix: Iterable<A, Args, Return>
-  ): Iterable<A, Args, Return>
+  public abstract concat(suffix: unknown): unknown
 
   public count(predicate: (elem: A) => boolean): number {
     return Array.from(this).filter(predicate).length
@@ -44,8 +49,8 @@ export default abstract class Iterable<
   }
 
   public abstract iterator(): Iterator<A>
-  
-  public abstract map<B>(f: ((elem: A) => B)): unknown
+
+  public abstract map(f: (elem: unknown) => unknown): unknown
 
   public size(): number {
     return Array.from(this).length

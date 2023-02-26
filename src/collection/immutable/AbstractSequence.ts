@@ -1,3 +1,10 @@
+/*
+ * Modified by Shun Ueda
+ * Copyright (c) 2023 Shun Ueda
+ * This code is licensed under the MIT License.
+ * For details, see the LICENSE file at the root of this project.
+ */
+
 import Iterable from '../Iterable'
 
 export default abstract class AbstractSequence<out A> extends Iterable<
@@ -24,6 +31,8 @@ export default abstract class AbstractSequence<out A> extends Iterable<
   public join(separator?: string): string {
     return Array.from(this).reduce((acc, e) => acc + e, '')
   }
-  
+
   public abstract override map<B>(f: (elem: A) => B): AbstractSequence<B>
+
+  public abstract reversed(): AbstractSequence<A>
 }

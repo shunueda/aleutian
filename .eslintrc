@@ -13,17 +13,47 @@
   },
   "rules": {
     "curly": "error",
-    "@typescript-eslint/explicit-member-accessibility": "error",
+    "padded-blocks": [
+      "warn",
+      {
+        "blocks": "never",
+        "classes": "never",
+        "switches": "never"
+      }
+    ],
+    "padding-line-between-statements": [
+      "warn",
+      {
+        "blankLine": "never",
+        "prev": "*",
+        "next": "expression"
+      },
+      {
+        "blankLine": "never",
+        "prev": "expression",
+        "next": "expression"
+      },
+      {
+        "blankLine": "never",
+        "prev": "expression",
+        "next": "*"
+      }
+    ],
+    "lines-between-class-members": [
+      "error",
+      "always"
+    ],
+    "@typescript-eslint/explicit-member-accessibility": "warn",
     "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/array-type": [
-      "error",
+      "warn",
       {
         "default": "generic",
         "readonly": "generic"
       }
     ],
     "sort-class-members/sort-class-members": [
-      2,
+      "warn",
       {
         "order": [
           "[static-prop]",

@@ -5,9 +5,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4cc074d-d204-415d-b688-6f439b299ce9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/collection/NonEmptySeq" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/collection/Seq.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/Seq.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENCE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/lincense.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.swcrc" beforeDir="false" afterPath="$PROJECT_DIR$/.swcrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Base.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Base.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Comonad.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comonad.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Function.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Function.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Function.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Function.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Monad.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Monad.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/Iterable.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/Iterable.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/Pair.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/Pair.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/immutable/AbstractMap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/immutable/AbstractMap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/immutable/AbstractSequence.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/immutable/AbstractSequence.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/immutable/AbstractSet.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/immutable/AbstractSet.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/immutable/Map.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/immutable/Map.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/immutable/Seq.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/immutable/Seq.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/immutable/Set.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/immutable/Set.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/mutable/AbstractMap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/mutable/AbstractMap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/mutable/AbstractSequence.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/mutable/AbstractSequence.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/mutable/MutableMap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/mutable/MutableMap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection/mutable/MutableSeq.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection/mutable/MutableSeq.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/decorator/final.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exception/Exception.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/exception/Exceptions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/monad/Either.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/monad/Either.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/monad/Kleisli.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/monad/Kleisli.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/monad/Option.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/monad/Option.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/type/types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/curry.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/curry.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/function.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/function.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/functionTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/functionTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/match.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/match.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/predef.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/predef.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/util.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/util.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/collection/immutable/Seq.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/collection/immutable/Seq.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +92,7 @@
     &quot;nodejs.mocha.mocha_node_package_dir&quot;: &quot;yarn:package.json:mocha&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;yarn:package.json:prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\dev\\shunueda\\aleutian\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -64,13 +102,30 @@
       <recent name="C:\dev\shunueda\aleutian\test\monad" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\shunueda\aleutian\test\collection\immutable" />
+      <recent name="C:\dev\shunueda\aleutian\src\collection" />
+      <recent name="C:\dev\shunueda\aleutian\src\collection\immutable" />
       <recent name="C:\dev\shunueda\aleutian\src" />
       <recent name="C:\dev\shunueda\aleutian\src\type" />
-      <recent name="C:\dev\shunueda\aleutian\test" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.lazyTest">
+  <component name="RunManager" selected="Mocha.Seq (1)">
     <configuration name="lazyTest" type="NodeJSConfigurationType" path-to-js-file="build/test/index.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="Seq (1)" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>yarn:package.json:mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/test/collection/immutable/Seq.ts</test-file>
+      <test-names>
+        <name value="Seq" />
+      </test-names>
       <method v="2" />
     </configuration>
     <configuration name="Seq" type="mocha-javascript-test-runner" temporary="true">
@@ -89,11 +144,13 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Mocha.Seq (1)" />
       <item itemvalue="Mocha.Seq" />
       <item itemvalue="Node.js.lazyTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Mocha.Seq (1)" />
         <item itemvalue="Mocha.Seq" />
       </list>
     </recent_temporary>
@@ -114,6 +171,9 @@
       <workItem from="1677004677201" duration="9543000" />
       <workItem from="1677092319571" duration="50699000" />
       <workItem from="1677194753866" duration="7598000" />
+      <workItem from="1677278491873" duration="37365000" />
+      <workItem from="1677369637743" duration="2919000" />
+      <workItem from="1677372613917" duration="1981000" />
     </task>
     <servers />
   </component>
@@ -133,17 +193,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/build/test/index.js</url>
-          <line>8</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

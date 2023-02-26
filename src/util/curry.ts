@@ -1,3 +1,10 @@
+/*
+ * Modified by Shun Ueda
+ * Copyright (c) 2023 Shun Ueda
+ * This code is licensed under the MIT License.
+ * For details, see the LICENSE file at the root of this project.
+ */
+
 export function curry<A, R>(f: (a: A) => R): (a: A) => R {
   return (a: A) => f(a)
 }

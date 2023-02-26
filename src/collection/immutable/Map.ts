@@ -1,51 +1,43 @@
+/*
+ * Modified by Shun Ueda
+ * Copyright (c) 2023 Shun Ueda
+ * This code is licensed under the MIT License.
+ * For details, see the LICENSE file at the root of this project.
+ */
+
 import AbstractMap from './AbstractMap'
 import { Pair } from '../Pair'
-import { Set } from './Set'
-import { NoSuchElementException } from '../../exception/Exception'
 
 export class Map<A, out B> extends AbstractMap<A, B> {
-  public static override empty<A, B>(): Map<A, B> {
-    return new Map<A, B>([])
+  public apply(args_0: A): B {
+    throw new Error('Method not implemented.')
   }
 
-  public override apply(key: A): B {
-    return this.get(key)
+  public concat(suffix: AbstractMap<A, B>): AbstractMap<A, B> {
+    throw new Error('Method not implemented.')
   }
 
-  public override concat(suffix: AbstractMap<A, B>): Map<A, B> {
-    const map = new Map<A, B>(this.entries())
-    suffix.entries().forEach(([k, v]) => {
-      map.set(k, v)
-    })
-    return map
+  public get(key: A): B {
+    throw new Error('Method not implemented.')
   }
 
-  public override get(key: A): B {
-    if (this.instance.has(key)) {
-      return this.instance.get(key) as B
-    }
-    throw new NoSuchElementException("")
+  public has(key: A): boolean {
+    throw new Error('Method not implemented.')
   }
 
-  public override has(key: A): boolean {
-    return this.instance.has(key)
+  public iterator(): Iterator<Pair<A, B>, any, undefined> {
+    throw new Error('Method not implemented.')
   }
 
-
-  public override iterator(): Iterator<Pair<A, B>> {
-    throw ''
+  public override map<C>(f: (elem: B) => C): Map<A, C> {
+    return new Map<A, C>([])
   }
 
-  public override map<C>(f: (elem: Pair<A, B>) => C): Map<A, C> {
-    throw ''
+  public set(key: A, value: B): AbstractMap<A, B> {
+    throw new Error('Method not implemented.')
   }
 
-  public override set(key: A, value: B): void {
-    throw ''
+  public toString(): string {
+    throw new Error('Method not implemented.')
   }
-
-  public override toString(): string {
-    return ''
-  }
-
 }

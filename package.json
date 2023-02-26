@@ -21,7 +21,8 @@
     "lint": "eslint src --ext .ts",
     "postlint": "yarn format",
     "publish": "yarn publish",
-    "nodemon": "nodemon --exec yarn lazyTest"
+    "nodemon": "nodemon --exec yarn lazyTest",
+    "docs": "typedoc src/index.ts"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",
@@ -37,6 +38,7 @@
     "mocha": "^10.2.0",
     "nodemon": "^2.0.20",
     "prettier": "^2.8.1",
+    "typedoc": "^0.23.25",
     "typescript": "^4.9.5"
   },
   "author": "Shun Ueda",

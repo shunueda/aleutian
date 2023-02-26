@@ -1,3 +1,10 @@
+/*
+ * Modified by Shun Ueda
+ * Copyright (c) 2023 Shun Ueda
+ * This code is licensed under the MIT License.
+ * For details, see the LICENSE file at the root of this project.
+ */
+
 import AbstractSequence from './AbstractSequence'
 import AbstractSet from './AbstractSet'
 
@@ -14,6 +21,7 @@ export class Set<out A> extends AbstractSet<A> {
       )
     )
   }
+
   public constructor(elements: Array<A>) {
     super()
     elements.forEach(this.instance.add)
@@ -27,7 +35,7 @@ export class Set<out A> extends AbstractSet<A> {
     return new Set([...this, ...suffix])
   }
 
-  public* iterator(): Iterator<A> {
+  public *iterator(): Iterator<A> {
     return this.instance.values()
   }
 
