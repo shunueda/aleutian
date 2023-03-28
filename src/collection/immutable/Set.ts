@@ -1,5 +1,5 @@
 /*
- * Modified by Shun Ueda
+ * Created by Shun Ueda
  * Copyright (c) 2023 Shun Ueda
  * This code is licensed under the MIT License.
  * For details, see the LICENSE file at the root of this project.
@@ -7,6 +7,7 @@
 
 import AbstractSequence from './AbstractSequence'
 import AbstractSet from './AbstractSet'
+import Iterable from '../Iterable'
 
 export class Set<out A> extends AbstractSet<A> {
   public static override range(
@@ -35,7 +36,7 @@ export class Set<out A> extends AbstractSet<A> {
     return new Set([...this, ...suffix])
   }
 
-  public *iterator(): Iterator<A> {
+  public *iterator(): IterableIterator<A> {
     return this.instance.values()
   }
 

@@ -1,5 +1,5 @@
 {
-  "minify": true,
+  "minify": false,
   "jsc": {
     "keepClassNames": true,
     "parser": {
@@ -8,8 +8,8 @@
       "privateMethod": true
     },
     "minify": {
-      "mangle": true,
-      "compress": true
+      "mangle": false,
+      "compress": false
     },
     "target": "es2022"
   },

@@ -1,5 +1,5 @@
 /*
- * Modified by Shun Ueda
+ * Created by Shun Ueda
  * Copyright (c) 2023 Shun Ueda
  * This code is licensed under the MIT License.
  * For details, see the LICENSE file at the root of this project.
@@ -17,7 +17,12 @@ export default abstract class Base<
   Args extends Array<unknown>,
   Return
 > extends Function<Args, Return> {
-  /** @ignore */
+  /**
+   * @internal
+   * Force custom inspect function to be used.
+   * @returns The string representation of the class.
+   * @see https://nodejs.org/api/util.html#util_util_inspect_custom
+   */
   public [util.inspect.custom](): string {
     return this.toString()
   }

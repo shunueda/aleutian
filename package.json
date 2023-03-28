@@ -1,6 +1,6 @@
 {
   "name": "aleutian",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Functional library for JavaScript/Typescript",
   "type": "module",
   "main": "src/index.ts",
@@ -22,7 +22,7 @@
     "postlint": "yarn format",
     "publish": "yarn publish",
     "nodemon": "nodemon --exec yarn lazyTest",
-    "docs": "typedoc src/index.ts"
+    "docs": "typedoc src/index.ts --excludeInternal"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",
